@@ -4,7 +4,8 @@
       "WebSearch",
       "Bash(git add *)",
       "Bash(git commit --amend -m ' *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(npm uninstall *)"
     ]
   }
 }
