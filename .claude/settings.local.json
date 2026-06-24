@@ -3,7 +3,8 @@
     "allow": [
       "WebSearch",
       "Bash(git add *)",
-      "Bash(git commit --amend -m ' *)"
+      "Bash(git commit --amend -m ' *)",
+      "Bash(npm run *)"
     ]
   }
 }
