@@ -1,0 +1,171 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": ".*",
+			"continue": true,
+			"transforms": [
+				{
+					"type": "request.query",
+					"op": "delete",
+					"target": {
+						"key": "__pathname"
+					}
+				}
+			]
+		},
+		{
+			"src": "/feed",
+			"dest": "/feed/"
+		},
+		{
+			"src": "/feed/",
+			"status": 308,
+			"headers": {
+				"Location": "/feed"
+			}
+		},
+		{
+			"src": "/hilos",
+			"dest": "/hilos/"
+		},
+		{
+			"src": "/hilos/",
+			"status": 308,
+			"headers": {
+				"Location": "/hilos"
+			}
+		},
+		{
+			"src": "/login",
+			"dest": "/login/"
+		},
+		{
+			"src": "/login/",
+			"status": 308,
+			"headers": {
+				"Location": "/login"
+			}
+		},
+		{
+			"src": "/hilos/estudiantes-autoconvocados-de-exactas-uba",
+			"dest": "/hilos/estudiantes-autoconvocados-de-exactas-uba/"
+		},
+		{
+			"src": "/hilos/estudiantes-autoconvocados-de-exactas-uba/",
+			"status": 308,
+			"headers": {
+				"Location": "/hilos/estudiantes-autoconvocados-de-exactas-uba"
+			}
+		},
+		{
+			"src": "/hilos/manifiesto-autoconvocados-exactas",
+			"dest": "/hilos/manifiesto-autoconvocados-exactas/"
+		},
+		{
+			"src": "/hilos/manifiesto-autoconvocados-exactas/",
+			"status": 308,
+			"headers": {
+				"Location": "/hilos/manifiesto-autoconvocados-exactas"
+			}
+		},
+		{
+			"src": "/textos/estudiantes-autoconvocados-de-exactas-uba",
+			"dest": "/textos/estudiantes-autoconvocados-de-exactas-uba/"
+		},
+		{
+			"src": "/textos/estudiantes-autoconvocados-de-exactas-uba/",
+			"status": 308,
+			"headers": {
+				"Location": "/textos/estudiantes-autoconvocados-de-exactas-uba"
+			}
+		},
+		{
+			"src": "/textos/manifiesto-autoconvocados-exactas",
+			"dest": "/textos/manifiesto-autoconvocados-exactas/"
+		},
+		{
+			"src": "/textos/manifiesto-autoconvocados-exactas/",
+			"status": 308,
+			"headers": {
+				"Location": "/textos/manifiesto-autoconvocados-exactas"
+			}
+		},
+		{
+			"src": "/textos/una-historia-autocontada",
+			"dest": "/textos/una-historia-autocontada/"
+		},
+		{
+			"src": "/textos/una-historia-autocontada/",
+			"status": 308,
+			"headers": {
+				"Location": "/textos/una-historia-autocontada"
+			}
+		},
+		{
+			"src": "/textos/la-moral-autoconvocada",
+			"dest": "/textos/la-moral-autoconvocada/"
+		},
+		{
+			"src": "/textos/la-moral-autoconvocada/",
+			"status": 308,
+			"headers": {
+				"Location": "/textos/la-moral-autoconvocada"
+			}
+		},
+		{
+			"src": "/_app/immutable/.+",
+			"headers": {
+				"cache-control": "public, immutable, max-age=31536000"
+			}
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "/_app/immutable/.+",
+			"status": 404,
+			"headers": {
+				"cache-control": "no-store"
+			},
+			"continue": false
+		},
+		{
+			"src": "^/?(?:/__data.json)?$",
+			"dest": "/"
+		},
+		{
+			"src": "/.*",
+			"dest": "/![-]/catchall"
+		}
+	],
+	"overrides": {
+		"feed.html": {
+			"path": "feed"
+		},
+		"hilos.html": {
+			"path": "hilos"
+		},
+		"login.html": {
+			"path": "login"
+		},
+		"hilos/estudiantes-autoconvocados-de-exactas-uba.html": {
+			"path": "hilos/estudiantes-autoconvocados-de-exactas-uba"
+		},
+		"hilos/manifiesto-autoconvocados-exactas.html": {
+			"path": "hilos/manifiesto-autoconvocados-exactas"
+		},
+		"textos/estudiantes-autoconvocados-de-exactas-uba.html": {
+			"path": "textos/estudiantes-autoconvocados-de-exactas-uba"
+		},
+		"textos/manifiesto-autoconvocados-exactas.html": {
+			"path": "textos/manifiesto-autoconvocados-exactas"
+		},
+		"textos/una-historia-autocontada.html": {
+			"path": "textos/una-historia-autocontada"
+		},
+		"textos/la-moral-autoconvocada.html": {
+			"path": "textos/la-moral-autoconvocada"
+		}
+	}
+}

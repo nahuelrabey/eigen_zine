@@ -1,0 +1,1 @@
+const n="hlv_universitaria_siempre",e="eigenzine_auth";function i(t){return t===n}function s(){return document.cookie.split(";").some(t=>t.trim().startsWith(e+"="))}function o(){const t=new Date(Date.now()+2592e6).toUTCString();document.cookie=`${e}=1; path=/; expires=${t}`}export{i as c,s as i,o as s};
